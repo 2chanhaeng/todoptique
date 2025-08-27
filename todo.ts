@@ -14,9 +14,8 @@ export default class Todo {
     this.#print();
   }
   #check(ids: readonly number[]) {
-    ids.forEach((id) =>
-      this.#list.get(id) && (this.#list.get(id)!.checked = true)
-    );
+    ids.filter((id) => this.#list.get(id))
+      .forEach((id) => this.#list.get(id)!.checked = true);
     this.#print();
   }
   #help() {
@@ -31,9 +30,11 @@ export default class Todo {
     console.clear();
     console.log("Todo List");
     console.log("---------");
-    this.#list.forEach((item, id) => {
-      console.log(`${id}. [${item.checked ? "x" : " "}] ${item.title}`);
-    });
+    this.#list.forEach((item, id) =>
+      console.log(
+        `${id}. [${item.checked ? "\x1b[32mv\x1b[0m" : " "}] ${item.title}`,
+      )
+    );
   }
   #process(result: Commands) {
     switch (result.type) {
