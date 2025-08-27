@@ -1,4 +1,4 @@
-import { parse } from "./parse.ts";
+import { parse } from "./parser.ts";
 import Todo from "./todo.ts";
 
 const getArgs = () => (prompt() ?? "").split(" ");

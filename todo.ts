@@ -1,4 +1,4 @@
-import type { Commands } from "./parse.ts";
+import type { Commands } from "./parser.ts";
 
 export default class Todo {
   #list = new Map<number, { title: string; checked: boolean }>();
