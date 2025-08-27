@@ -1,0 +1,24 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@optique/core@0.2": "0.2.0",
+    "jsr:@optique/run@0.2": "0.2.0"
+  },
+  "jsr": {
+    "@optique/core@0.2.0": {
+      "integrity": "71b12015ed89649874e8988d68908bf7fd4993f10bd6cb280a4b5a8324cc9aca"
+    },
+    "@optique/run@0.2.0": {
+      "integrity": "95992a29c08d25ffc437d9dc4d45dccd5015680889fdfdb0fc70b37101de185a",
+      "dependencies": [
+        "jsr:@optique/core"
+      ]
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@optique/core@0.2",
+      "jsr:@optique/run@0.2"
+    ]
+  }
+}

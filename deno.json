@@ -1,5 +1,9 @@
 {
   "tasks": {
     "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@optique/core": "jsr:@optique/core@^0.2.0",
+    "@optique/run": "jsr:@optique/run@^0.2.0"
   }
 }
