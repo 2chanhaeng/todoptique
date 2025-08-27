@@ -1,8 +1,10 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import { parse } from "./parse.ts";
+import Todo from "./todo.ts";
 
-// Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+const getArgs = () => (prompt() ?? "").split(" ");
+const main = () => {
+  const todo = new Todo();
+  while (true) todo.process(parse(getArgs()));
+};
+
+main();
